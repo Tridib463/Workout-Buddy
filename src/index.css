@@ -26,6 +26,7 @@ header .container {
 header a {
   color: #333;
   text-decoration: none;
+  padding-right: 1rem;
 }
 .pages{
   max-width: 1400px;
@@ -109,3 +110,36 @@ div.error {
   margin: 20px 0;
 }
 
+span {
+  margin-right: 1rem;
+  font-weight: 600;
+}
+
+.button {
+  background-color: #f0f0f0; /* Light gray background */
+  color: #333; /* Dark gray text color */
+  border: 1px solid #ccc; /* Light gray border */
+  border-radius: 5px; /* Rounded corners */
+  padding: 10px 20px; /* Padding inside the button */
+  font-size: 16px; /* Font size */
+  cursor: pointer; /* Cursor style */
+  text-align: center; /* Center text horizontally */
+  text-decoration: none; /* Remove underline */
+  display: inline-block; /* Display as inline-block */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition effect */
+  margin-left: 1rem;
+}
+
+.button:hover {
+  background-color: #e0e0e0; /* Lighter gray background on hover */
+  color: #444; /* Darker text color on hover */
+}
+
+.button:focus {
+  outline: none; /* Remove outline on focus */
+  box-shadow: 0 0 5px rgba(0, 0, 0, 1); /* Add shadow on focus */
+}
+
+.button:active {
+  background-color: #dcdcdc; /* Slightly darker background when clicked */
+}

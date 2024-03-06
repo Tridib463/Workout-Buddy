@@ -1,5 +1,6 @@
 import { useEffect,useState } from "react";
 import {useAuthContext} from '../hooks/useAuthContext';
+import { useLogin } from '../hooks/useLogin';
 
 
 
@@ -9,6 +10,7 @@ const Home = () => {
     const [load, setLoad] = useState('');
     const [reps, setReps] = useState('');
     const [error,setError] = useState(null);
+    const {isLoading} = useLogin();
 
     const {user} = useAuthContext();
 
@@ -77,14 +79,13 @@ const Home = () => {
            
             if (response.ok) {
                 setWorkouts(json);
-            
             }
         }
         if(user) {
           fetchWorkouts();
         }
         
-    }, [workouts, user])
+    }, [workouts])
 
 
     return (
@@ -97,9 +98,11 @@ const Home = () => {
                  <p><strong>reps: </strong>{workout.reps}</p>
                  <p>{workout.createdAt}</p>
                  <span onClick={() =>handleDelete({workout})}>Delete</span>
+                 
              </div>
              ))}
          </div>
+         
          <form  className="create" onSubmit={handleSubmit}>
              <h3>Add a new Workout</h3>
      

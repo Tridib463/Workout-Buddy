@@ -6,11 +6,10 @@ import { useNavigate } from 'react-router-dom';
 function Navbar() {
   const {logout} = useLogout();
   const {user} = useAuthContext();
-  const navigate = useNavigate();
+
   
   const handleClick  = () => {
     logout();
-    navigate("/login");
   }
 
   return (
@@ -23,13 +22,13 @@ function Navbar() {
               {user && (
                 <div>
                 <span>{user.email}</span>
-                <button onClick={handleClick}>Log out</button>
+                <button className = "button"onClick={handleClick}>Log out</button>
               </div>
               )}
               {!user && (
                  <div>
-                 <Link to="/login">Login</Link>
-                 <Link to="/signup">Sign up</Link>
+                 <Link to="/login" className='button'>Login</Link>
+                 <Link to="/signup" className='button'>Sign up</Link>
                </div>
               )}
              
